@@ -15,32 +15,32 @@ using System.Windows.Shapes;
 
 namespace WpfControls
 {
-    /// <summary>
-    /// Interaction logic for UserControl1.xaml
-    /// </summary>
-    public partial class ListViewControl : UserControl
+  /// <summary>
+  /// Interaction logic for UserControl1.xaml
+  /// </summary>
+  public partial class ListViewControl : UserControl
+  {
+    public List<string> ListEntries { get; set; }
+
+    public ListViewControl()
     {
-        public List<string> ListEntries { get; set; }
+      this.InitializeComponent();
+      this.DataContext = this;
 
-        public ListViewControl()
-        {
-            this.InitializeComponent();
-            this.DataContext = this;
-
-            this.SelectedIndex = 0;
-        }
-
-        public int SelectedIndex
-        {
-            get
-            {
-                return this.listView.SelectedIndex;
-            }
-
-            set
-            {
-                this.listView.SelectedIndex = value;
-            }
-        }
+      this.SelectedIndex = 0;
     }
+
+    public int SelectedIndex
+    {
+      get
+      {
+        return this.listView.SelectedIndex;
+      }
+
+      set
+      {
+        this.listView.SelectedIndex = value;
+      }
+    }
+  }
 }
