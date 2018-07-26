@@ -14,11 +14,11 @@ namespace WpfControls
 {
   [Designer("System.Windows.Forms.Design.ControlDesigner, System.Design")]
   [DesignerSerializer("System.ComponentModel.Design.Serialization.TypeCodeDomSerializer , System.Design", "System.ComponentModel.Design.Serialization.CodeDomSerializer, System.Design")]
-  public class ListViewControl_WinformsHost : System.Windows.Forms.Integration.ElementHost
+  public class ListViewControl_WinFormsHost : System.Windows.Forms.Integration.ElementHost
   {
     protected ListViewControl wpfListViewControl = new ListViewControl();
 
-    public ListViewControl_WinformsHost()
+    public ListViewControl_WinFormsHost()
     {
       base.Child = this.wpfListViewControl;
     }

@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:WpfControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
- 
-    <ListView x:Name="listView" ItemsSource="{Binding ListEntries}">
-    </ListView>
- 
+
+        <ListView x:Name="listView" ItemsSource="{Binding ListEntries}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        </ListView>
+
 </UserControl>
