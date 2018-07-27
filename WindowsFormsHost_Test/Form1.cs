@@ -25,21 +25,25 @@ namespace WindowsFormsHost_Test
       this.listViewControl.ListEntries = lvcContents;
       this.listViewControl.SelectedIndex = 1;
 
-      System.Windows.Style style = new System.Windows.Style();
-      style.TargetType = typeof(WpfControls.ListViewControl);
+      // Apply color scheme to the ListView.
+      // Important: get to the ListView from the ListViewControl user control.
+      var style = new System.Windows.Style();
+      style.TargetType = typeof(System.Windows.Controls.ListView);
       style.Setters.Add(new System.Windows.Setter(WpfControls.ListViewControl.BackgroundProperty, System.Windows.Media.Brushes.Pink));
       style.Setters.Add(new System.Windows.Setter(WpfControls.ListViewControl.ForegroundProperty, System.Windows.Media.Brushes.Red));
-      this.listViewControl.Style = style;
 
-      //this.listViewControlHost.OnPropertyChanged("Style", style);
+      var listView = listViewControl.FindName("listView") as System.Windows.Controls.ListView;
 
+      if (listView != null)
+        listView.Style = style;
 
-      //this.listViewControl.Background = System.Windows.Media.Brushes.Red;
-      //this.listViewControl.SetValue(WpfControls.ListViewControl.BackgroundProperty, System.Windows.Media.Brushes.Red);
-      //InvalidateProperty(WpfControls.ListViewControl.BackgroundProperty);
-      //     this.listViewControl.Foreground = System.Windows.Media.Brushes.Green;
-      //this.listViewControlHost.BackColor = Color.Indigo;
-      //this.listViewControlHost.ForeColor = Color.Honeydew;
+      // TODO: change brushes.  Needs to be dynamic resource.
+
+      /*var st = listViewControl.Resources["CustomScrollBar"] as System.Windows.Style;
+      st.TargetType = typeof(System.Windows.Controls.Primitives.ScrollBar);
+      
+      if (listView != null)
+        listView.Style = st;*/
 
     }
   }
