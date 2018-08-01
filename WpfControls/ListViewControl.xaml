@@ -22,10 +22,11 @@
         <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="Gray" />
         <SolidColorBrush x:Key="SelectedForegroundBrush" Color="White" />
         <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
-        <SolidColorBrush x:Key="NormalBrush" Color="#888" />
-        <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" />
-        <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#888" />
-        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="NormalBrush" Color="#888" />  <!-- 1 -->
+        <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" /> <!-- 2 -->
+        <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#888" /> <!-- pulley -->
+        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" /> <!-- pulley -->
+        <SolidColorBrush x:Key="CustomBackgroundBrush" Color="Black" /> <!-- background -->
         <LinearGradientBrush x:Key="ListBoxBackgroundBrush" 
 			StartPoint="0,0" EndPoint="1,0.001">
             <GradientBrush.GradientStops>
@@ -45,7 +46,7 @@
                 </GradientStopCollection>
             </GradientBrush.GradientStops>
         </LinearGradientBrush>
-        <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+        <SolidColorBrush x:Key="GlyphBrush" Color="#444" />  <!-- -->
         <LinearGradientBrush x:Key="PressedBrush" 
 			StartPoint="0,0" EndPoint="0,1">
             <GradientBrush.GradientStops>
@@ -70,7 +71,7 @@
           Name="Border"
           Margin="1" 
           CornerRadius="2" 
-          Background="{StaticResource NormalBrush}"
+          Background="{DynamicResource NormalBrush}"
           BorderBrush="{StaticResource NormalBorderBrush}"
           BorderThickness="1">
                             <Path 
@@ -140,9 +141,9 @@
                 <Border
       Grid.RowSpan="3"
       CornerRadius="2" 
-      Background="#F0F0F0" />
+      Background="{StaticResource CustomBackgroundBrush}" />
                 <RepeatButton 
-      Grid.Row="0"                           
+      Grid.Row="0"
       Style="{StaticResource ScrollBarLineButton}"
       Height="18"
       Command="ScrollBar.LineUpCommand"
@@ -209,7 +210,7 @@
                         <Thumb 
           Style="{StaticResource ScrollBarThumb}" 
           Margin="0,1,0,1"  
-          Background="{StaticResource NormalBrush}"
+          Background="{DynamicResource NormalBrush}"
           BorderBrush="{StaticResource NormalBorderBrush}" />
                     </Track.Thumb>
                     <Track.IncreaseRepeatButton>
